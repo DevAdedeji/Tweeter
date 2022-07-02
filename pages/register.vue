@@ -1,15 +1,25 @@
 <template>
   <div class="min-h-screen flex gap-4">
-    <div class="w-[60%] min-h-screen">
+    <div class="hidden md:block md:w-[50%] w-[60%] min-h-screen">
       <img src="/tw.jpg" class="w-full min-h-full" />
     </div>
     <!-- Container -->
-    <div class="w-[40%] flex flex-col">
+    <div class="w-[90%] mx-auto md:w-[50%] lg:w-[40%] flex flex-col">
       <div class="logo h-[10vh] w-full justify-self-start">
         <img src="/logo.png" alt="logo" class="w-[100px] h-[100px]" />
       </div>
       <div class="title italic pt-[100px] pb-10 flex flex-col gap-10">
-        <p class="font-black text-[40px] tracking-wide">Join Tweeter Today.</p>
+        <p
+          class="
+            font-black
+            text-[25px]
+            md:text-[30px]
+            lg:text-[40px]
+            tracking-wide
+          "
+        >
+          Join Tweeter Today.
+        </p>
       </div>
       <!-- Form Container -->
       <div class="flex flex-col gap-4">

@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-screen flex gap-4">
-    <div class="w-[60%] min-h-screen">
+    <div class="hidden md:block md:w-[50%] w-[60%] min-h-screen">
       <img src="/tw.jpg" class="w-full min-h-full" />
     </div>
     <!-- Container -->
-    <div class="w-[40%] flex flex-col">
+    <div class="w-[90%] mx-auto md:w-[50%] lg:w-[40%] flex flex-col">
       <div class="logo h-[10vh] w-full justify-self-start">
         <img src="/logo.png" alt="logo" class="w-[100px] h-[100px]" />
       </div>
