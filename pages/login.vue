@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Login Page</h1>
+    <p class="font-bold text-[50px]">Login Page</p>
   </div>
 </template>
 

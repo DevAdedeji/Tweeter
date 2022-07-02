@@ -4,8 +4,21 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
     head:{
        " link": [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
           ]
     },
-    ssr: false,
+    ssr: false,    
+    css:['@/public/css/style.css'],
+    tailwindcss: {
+      jit: true,
+    },build: {
+      postcss: {
+        postcssOptions: {
+          plugins: {
+            tailwindcss: {},
+            autoprefixer: {},
+          },
+        },
+      },
+    }
 })
