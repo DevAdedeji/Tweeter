@@ -25,7 +25,7 @@
         </p>
       </div>
       <!-- Form Container -->
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 md:pr-4">
         <!-- Email -->
         <div class="flex flex-col gap-1">
           <label for="email">Email:</label>

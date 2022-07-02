@@ -15,7 +15,7 @@
         <p class="font-black text-[40px] tracking-wide">Login to Twitter.</p>
       </div>
       <!-- Form Container -->
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4 md:pr-4">
         <!-- Email -->
         <div class="flex flex-col gap-1">
           <label for="email">Email:</label>
@@ -38,6 +38,7 @@
         </div>
         <button
           class="py-3 mt-4 bg-primary text-white text-center rounded-[5px]"
+          @click="loginUser"
         >
           Login
         </button>
@@ -47,16 +48,27 @@
 </template>
 
 <script>
+import login from "../services/login";
 export default {
   setup() {
     const config = useRuntimeConfig();
     const email = ref();
     const password = ref();
     let apiLink = config.API_BASE_URL;
+
+    function loginUser() {
+      const data = login(apiLink + "", {
+        email: email.value,
+        password: password.value,
+      });
+      console.log(data);
+    }
+
     return {
       apiLink,
       email,
       password,
+      loginUser,
     };
   },
 };
