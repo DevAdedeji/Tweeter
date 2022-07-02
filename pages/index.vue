@@ -1,6 +1,9 @@
 <template>
-  <section>
-    <h1>FeedPage</h1>
+  <section class="flex">
+    <Head>
+      <Title>Home / Twitter</Title>
+    </Head>
+    <Sidebar />
   </section>
 </template>
 
