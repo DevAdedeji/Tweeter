@@ -69,6 +69,7 @@ export default {
     const email = ref();
     const password = ref();
     const error = ref(false);
+    const router = useRouter();
     let Btndisabled = ref(false);
     const apiLink = config.API_BASE_URL;
 
@@ -83,7 +84,7 @@ export default {
           // Login successful
           localStorage.setItem("TweeterToken", response.data.token);
           if (response.status === 201) {
-            useRouter().push("/");
+            router.push("/");
           }
         })
         .catch((err) => {

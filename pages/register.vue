@@ -76,6 +76,7 @@ export default {
     const config = useRuntimeConfig();
     const email = ref();
     const password = ref();
+    const router = useRouter();
     let error = ref(false);
     let btnDisabled = ref(false);
     let apiLink = config.API_BASE_URL;
@@ -89,7 +90,7 @@ export default {
       })
         .then((response) => {
           localStorage.setItem("TweeterToken", response.data.token);
-          useRouter().push("/login");
+          router.push("/login");
         })
         .catch((err) => {
           let res = err.response;
