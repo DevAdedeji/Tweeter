@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const login = async (link, data) =>{
+const auth = async (link, data) =>{
     try{
         const response = await axios.post(link, data)
         return response
@@ -9,4 +9,4 @@ const login = async (link, data) =>{
     }
 }
 
-export default login
+export default auth

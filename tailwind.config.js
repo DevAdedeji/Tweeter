@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: "jit",
+  theme: {
+    extend: {
+      colors:{
+        primary: '#1C9BF0'
+      }
+    },
+  },
   content: [
     "./components/**/*.{vue,js}",
     "./layouts/**/*.vue",
@@ -9,12 +16,6 @@ module.exports = {
     "./nuxt.config.{js,ts}",
   ],
   darkMode: false,
-  theme: {
-    extend: {
-      colors:{
-        primary: '#1C9BF0'
-      }
-    },
-  },
+  
   plugins: [],
 }

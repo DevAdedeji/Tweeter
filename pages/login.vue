@@ -16,52 +16,86 @@
       </div>
       <!-- Form Container -->
       <div class="flex flex-col gap-4 md:pr-4">
-        <!-- Email -->
-        <div class="flex flex-col gap-1">
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            v-model="email"
-            required
-            class="p-2 rounded-[5px]"
-          />
-        </div>
-        <!-- Password -->
-        <div class="flex flex-col gap-1">
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            v-model="password"
-            required
-            class="p-2 rounded-[5px]"
-          />
-        </div>
-        <button
-          class="py-3 mt-4 bg-primary text-white text-center rounded-[5px]"
-          @click="loginUser"
-        >
-          Login
-        </button>
+        <form @submit.prevent="loginUser" class="flex flex-col gap-4">
+          <!-- Email -->
+          <div class="flex flex-col gap-1">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              v-model="email"
+              required
+              class="p-2 rounded-[5px]"
+            />
+          </div>
+          <!-- Password -->
+          <div class="flex flex-col gap-1">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              v-model="password"
+              required
+              class="p-2 rounded-[5px]"
+            />
+          </div>
+          <p v-if="error" class="text-primary text-[14px] font-black">
+            Invalid email or password
+          </p>
+          <button
+            class="
+              py-3
+              mt-4
+              bg-primary
+              text-white text-center
+              rounded-[5px]
+              w-full
+            "
+            :disabled="Btndisabled"
+          >
+            Login
+          </button>
+        </form>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import login from "../services/login";
+import auth from "../services/auth";
+import { useRouter } from "vue-router";
 export default {
   setup() {
     const config = useRuntimeConfig();
     const email = ref();
     const password = ref();
-    let apiLink = config.API_BASE_URL;
+    const error = ref(false);
+    let Btndisabled = ref(false);
+    const apiLink = config.API_BASE_URL;
 
     function loginUser() {
-      const data = login(apiLink + "", {
+      Btndisabled = true;
+      auth(apiLink + "login", {
         email: email.value,
         password: password.value,
-      });
-      console.log(data);
+      })
+        .then((response) => {
+          // Login successful
+          console.log(response);
+          localStorage.setItem("TweeterToken", response.data.token);
+          if (response.status === 201) {
+            useRouter().push("/");
+          }
+        })
+        .catch((err) => {
+          Btndisabled = false;
+          let res = err.response;
+          if (res.status === 400) {
+            error.value = true;
+            setTimeout(() => {
+              error.value = false;
+            }, 2000);
+            password.value = "";
+          }
+        });
     }
 
     return {
@@ -69,6 +103,8 @@ export default {
       email,
       password,
       loginUser,
+      error,
+      Btndisabled,
     };
   },
 };
