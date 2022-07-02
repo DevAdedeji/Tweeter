@@ -82,6 +82,7 @@ export default {
 
     function registerUser() {
       btnDisabled.value = true;
+      document.getElementById("btn").textContent = "Registering.....";
       auth(apiLink + "register", {
         email: email.value,
         password: password.value,
@@ -93,6 +94,7 @@ export default {
         .catch((err) => {
           let res = err.response;
           btnDisabled.value = false;
+          document.getElementById("btn").textContent = "Register";
           if (res.status === 400) {
             error.value = true;
             setTimeout(() => {

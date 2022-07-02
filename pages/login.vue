@@ -49,6 +49,7 @@
               rounded-[5px]
               w-full
             "
+            id="btn"
             :disabled="Btndisabled"
           >
             Login
@@ -73,13 +74,13 @@ export default {
 
     function loginUser() {
       Btndisabled = true;
+      document.getElementById("btn").textContent = "Logging in...";
       auth(apiLink + "login", {
         email: email.value,
         password: password.value,
       })
         .then((response) => {
           // Login successful
-          console.log(response);
           localStorage.setItem("TweeterToken", response.data.token);
           if (response.status === 201) {
             useRouter().push("/");
@@ -87,6 +88,7 @@ export default {
         })
         .catch((err) => {
           Btndisabled = false;
+          document.getElementById("btn").textContent = "Loggin";
           let res = err.response;
           if (res.status === 400) {
             error.value = true;
