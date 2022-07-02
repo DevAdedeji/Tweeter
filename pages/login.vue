@@ -9,7 +9,7 @@
         <img src="/logo.png" alt="logo" class="w-[100px] h-[100px]" />
       </div>
       <div class="title italic pt-[100px] pb-10 flex flex-col gap-10">
-        <p class="font-black text-[40px] tracking-wide">Join Tweeter Today.</p>
+        <p class="font-black text-[40px] tracking-wide">Login to Tweeter.</p>
       </div>
       <!-- Form Container -->
       <div class="flex flex-col gap-4">
