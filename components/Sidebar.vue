@@ -2,23 +2,38 @@
   <section
     class="
       fixed
-      top-0
-      left-0
+      md:top-0 md:left-0
       bottom-0
-      md:w-[25%]
-      py-4
+      w-full
+      md:w-[10%]
+      py-2
       px-8
+      md:px-4 md:py-4
+      lg:px-8
       bg-white
-      max-h-full
-      border-r-2 border-[#e4e4e4]
+      md:max-h-full
+      border-t-2
+      md:border-r-2 md:border-t-0
+      border-[#e4e4e4]
     "
   >
-    <div class="flex flex-col gap-4">
-      <div class="logo">
+    <div class="flex w-full md:flex-col gap-4">
+      <div class="logo hidden md:block">
         <img src="/logo.png" alt="logo" class="w-[40px] h-[40px]" />
       </div>
       <!-- Links container -->
-      <div class="links flex flex-col gap-4 text-[18px]">
+      <div
+        class="
+          w-full
+          links
+          flex
+          items-center
+          justify-between
+          md:justify-start md:items-start md:flex-col
+          gap-4
+          text-[18px]
+        "
+      >
         <!-- Home -->
         <a
           href="/"
@@ -36,7 +51,7 @@
           <div>
             <img src="/sidebar/home.svg" alt="home-icon" />
           </div>
-          <p class="hidden md:block">Home</p>
+          <p class="hidden lg:block">Home</p>
         </a>
         <!-- Bookmarks -->
         <a
@@ -55,7 +70,7 @@
           <div>
             <img src="/sidebar/bookmark.svg" alt="bookmark-icon" />
           </div>
-          <p class="hidden md:block">Bookmarks</p>
+          <p class="hidden lg:block">Bookmarks</p>
         </a>
         <!-- Profile -->
         <a
@@ -74,14 +89,14 @@
           <div>
             <img src="/sidebar/profile.svg" alt="profile-icon" />
           </div>
-          <p class="hidden md:block">Profile</p>
+          <p class="hidden lg:block">Profile</p>
         </a>
         <!-- Tweet -->
         <a
           href="/tweet"
           class="
             hidden
-            md:block
+            lg:block
             text-center
             bg-primary
             px-2
@@ -96,7 +111,7 @@
         <!-- Mobile Tweet -->
         <div
           class="
-            md:hidden
+            lg:hidden
             flex
             items-center
             gap-2
@@ -110,7 +125,7 @@
           <img src="/sidebar/tweet.svg" alt="tweet-icon" />
         </div>
       </div>
-      <div class="hidden profile md:flex pb-4 pt-10 items-center gap-2">
+      <div class="hidden profile lg:flex pb-4 pt-10 items-center gap-2">
         <div class="">
           <img
             :src="profileImage"
@@ -122,9 +137,12 @@
           @{{ username.slice(0, 10) }}{{ username.length > 10 ? "..." : "" }}
         </p>
       </div>
-      <div class="pt-10 flex items-center gap-2 cursor-pointer" @click="logout">
+      <div
+        class="md:pt-10 flex items-center gap-2 cursor-pointer"
+        @click="logout"
+      >
         <img src="/sidebar/logout.svg" alt="logout-icon" />
-        <button class="hidden md:block">LogOut</button>
+        <button class="hidden lg:block">LogOut</button>
       </div>
     </div>
   </section>
