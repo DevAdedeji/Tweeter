@@ -82,6 +82,12 @@ export default {
       })
         .then((response) => {
           // Login successful
+
+          localStorage.setItem("TweeterUsername", response.data.username);
+          localStorage.setItem(
+            "TweeterProfileImage",
+            response.data.profile_image
+          );
           localStorage.setItem("TweeterToken", response.data.token);
           if (response.status === 201) {
             router.push("/");
