@@ -1,4 +1,8 @@
-<template></template>
+<template>
+  <section>
+    <Sidebar />
+  </section>
+</template>
 
 <script>
 export default {};
