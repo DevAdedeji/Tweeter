@@ -66,12 +66,12 @@ import { useRouter } from "vue-router";
 export default {
   setup() {
     const config = useRuntimeConfig();
+    const apiLink = config.API_BASE_URL;
     const email = ref();
     const password = ref();
     const error = ref(false);
     const router = useRouter();
     let Btndisabled = ref(false);
-    const apiLink = config.API_BASE_URL;
 
     function loginUser() {
       Btndisabled = true;
