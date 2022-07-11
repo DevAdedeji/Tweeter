@@ -17,15 +17,15 @@
         <img
           :src="tweet.user.profile_image"
           alt="user-icon"
-          class="w-[40px] h-[40px] rounded-[50%]"
+          class="w-[50px] h-[40px] rounded-[50%]"
         />
       </div>
       <div class="w-full flex flex-col gap-1">
         <div class="flex items-center gap-1">
-          <p class="font-normal">{{ tweet.user.username }}</p>
-          <p class="font-normal">
-            {{ Math.floor(tweet.createdAt.$date / 36000) }}
-          </p>
+          <p class="font-bold">{{ tweet.user.username }}</p>
+          <!-- <p class="font-normal">
+            .{{ Math.floor(tweet.createdAt.$date / 86400) }}
+          </p> -->
         </div>
         <!-- Post info -->
         <div class="opacity-[0.9]">
