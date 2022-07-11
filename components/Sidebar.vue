@@ -6,6 +6,7 @@
       bottom-0
       w-full
       md:w-[10%]
+      lg:w-[20%]
       py-2
       px-8
       md:px-4 md:py-4
@@ -38,6 +39,7 @@
         <a
           href="/"
           class="
+            lg:w-full
             flex
             items-center
             gap-2
@@ -57,6 +59,7 @@
         <a
           href="/bookmarks"
           class="
+            lg:w-full
             flex
             items-center
             gap-2
@@ -76,6 +79,7 @@
         <a
           href="/profile"
           class="
+            lg:w-full
             flex
             items-center
             gap-2
@@ -96,7 +100,7 @@
           href="/tweet"
           class="
             hidden
-            lg:block
+            lg:block lg:w-full
             text-center
             bg-primary
             px-2
