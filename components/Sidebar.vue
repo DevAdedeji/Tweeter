@@ -146,7 +146,7 @@
         @click="logout"
       >
         <img src="/sidebar/logout.svg" alt="logout-icon" />
-        <button class="hidden lg:block">LogOut</button>
+        <button class="hidden lg:block">Log Out</button>
       </div>
     </div>
   </section>
