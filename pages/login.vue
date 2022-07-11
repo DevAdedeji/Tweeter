@@ -65,8 +65,9 @@ import auth from "../services/auth";
 import { useRouter } from "vue-router";
 export default {
   setup() {
-    const config = useRuntimeConfig();
-    const apiLink = config.API_BASE_URL;
+    // const config = useRuntimeConfig();
+    // Getting the API Link
+    const apiLink = "https://tweeter-test-yin.herokuapp.com/";
     const email = ref();
     const password = ref();
     const error = ref(false);
@@ -76,6 +77,7 @@ export default {
     function loginUser() {
       Btndisabled = true;
       document.getElementById("btn").textContent = "Logging in...";
+      // Where i dey use am
       auth(apiLink + "login", {
         email: email.value,
         password: password.value,

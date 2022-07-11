@@ -64,8 +64,8 @@ import get from "../services/get";
 definePageMeta({
   middleware: "auth",
 });
-const config = useRuntimeConfig();
-const apiLink = config.API_BASE_URL;
+// const config = useRuntimeConfig();
+const apiLink = "https://tweeter-test-yin.herokuapp.com/";
 const tweets = ref(null);
 const loading = ref(true);
 onBeforeMount(() => {

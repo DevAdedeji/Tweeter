@@ -73,13 +73,13 @@
 import auth from "../services/auth";
 export default {
   setup() {
-    const config = useRuntimeConfig();
+    // const config = useRuntimeConfig();
     const email = ref();
     const password = ref();
     const router = useRouter();
     let error = ref(false);
     let btnDisabled = ref(false);
-    let apiLink = config.API_BASE_URL;
+    const apiLink = "https://tweeter-test-yin.herokuapp.com/";
 
     function registerUser() {
       btnDisabled.value = true;
